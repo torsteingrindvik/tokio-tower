@@ -32,7 +32,11 @@ tracing = "0.1.2"
 pin-project = "1.0"
 
 [dev-dependencies]
+tracing-subscriber = "*"
+anyhow = "*"
+rand = "*"
 tokio = { version = "1.0", features = [ "full" ] }
+tower = { version = "0.4", features = ["full"] }
 serde = "1.0"
 serde_derive = "1.0"
 async-bincode = "0.6"
