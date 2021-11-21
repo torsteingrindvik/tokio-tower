@@ -34,13 +34,13 @@ async fn main() -> Result<()> {
 
     // Each client goes through the same TCP connection in order to "handshake",
     // i.e. establish a unique connection.
-    const NUM_CLIENTS: usize = 100;
+    const NUM_CLIENTS: usize = 9;
 
     // After a separate connection is established, how many messages loops to do.
     const NUM_MESSAGES: usize = 3;
 
     // How many rounds to perform the entire dance.
-    const NUM_ROUNDS: usize = 100_000;
+    const NUM_ROUNDS: usize = 3;
 
     let tx = TcpStream::connect("127.0.0.1:1234").await?;
     let tx = AsyncBincodeStream::from(tx).for_async();
@@ -79,7 +79,7 @@ async fn main() -> Result<()> {
                         established_call(&mut client, format!("Hi from client #{}", client_id))
                             .await
                             .expect("Client call should be ok");
-                    debug!("Response: {}", response);
+                    info!("Response: {}", response);
                 }
             });
 

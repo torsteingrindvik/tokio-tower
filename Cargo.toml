@@ -36,6 +36,7 @@ tracing-subscriber = "*"
 anyhow = "*"
 rand = "*"
 tokio = { version = "1.0", features = [ "full" ] }
+tokio-util = { version = "*", features = [ "full" ] }
 tower = { version = "0.4", features = ["full"] }
 serde = "1.0"
 serde_derive = "1.0"
